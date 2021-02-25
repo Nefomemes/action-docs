@@ -19,20 +19,20 @@ fi
 
 echo "::[notice] # Checkout the repo in the target branch so we can build docs and push to it"
 
-if [ -z ${TARGET_BRANCH+x} ]; then 
+if [ -z "${TARGET_BRANCH+x}" ]; then 
 exit 1 
 fi 
 
-git clone $REPO out -b $TARGET_BRANCH
+git clone "$REPO" out -b "$TARGET_BRANCH"
 
 cd out
 git pull
 echo "::[notice] # Move the generated JSON file to the newly-checked-out repo, to be committed and pushed"
-mv $FILE_DIR $CURRENT_BRANCH.json
+mv "$FILE_DIR" "$CURRENT_BRANCH".json
 echo "::[notice] # Commit and push"
 git add .
-git config user.name "${GITHUB_ACTOR}"
-git config user.email "${GITHUB_ACTOR}@users.noreply.github.com"
-git commit -m "Docs build for ${SOURCE_TYPE} ${CURRENT_BRANCH}: ${GITHUB_SHA}" || true
-git push origin $TARGET_BRANCH
+git config user.name "$GITHUB_ACTOR"
+git config user.email "$GITHUB_ACTOR@users.noreply.github.com"
+git commit -m "Docs build for $SOURCE_TYPE $CURRENT_BRANCH: $GITHUB_SHA" || true
+git push origin "$TARGET_BRANCH"
 
