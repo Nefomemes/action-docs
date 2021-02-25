@@ -1,5 +1,4 @@
 {
-
   "compilerOptions": {
     "strict": true,
     "moduleResolution": "node",
@@ -23,5 +22,4 @@
     "allowSyntheticDefaultImports": true,
     "pretty": true
   }
-
 }
