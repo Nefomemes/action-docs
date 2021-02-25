@@ -4,6 +4,7 @@ on: push
 
 jobs:
     build:
+      runs-on: ubuntu-latest 
       name: Build
       steps:
       - name: Check out repository
@@ -13,9 +14,9 @@ jobs:
            npm run lit
            npm run build
       - name: Commit & Push changes
-      uses: actions-js/push@master
-      with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
+        uses: actions-js/push@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
         
       
         
