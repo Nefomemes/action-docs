@@ -6,8 +6,6 @@ cd $GITHUB_WORKSPACE
 
 echo "::[notice] # Run the build"
 
-npm run $SCRIPT_NAME
-
 # Initialise some useful variables
 REPO="https://${GITHUB_ACTOR}:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
 BRANCH_OR_TAG=`awk -F/ '{print $2}' <<< $GITHUB_REF`
