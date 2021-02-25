@@ -28,7 +28,7 @@ git clone "$REPO" out -b "$TARGET_BRANCH"
 cd out
 git pull
 echo "::[notice] # Move the generated JSON file to the newly-checked-out repo, to be committed and pushed"
-mv "$FILE_DIR" "$CURRENT_BRANCH".json
+mv "$FILE_DIR" "$CURRENT_BRANCH".js
 echo "::[notice] # Commit and push"
 git add .
 git config user.name "$GITHUB_ACTOR"
